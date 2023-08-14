@@ -54,7 +54,6 @@ function Navbar() {
         <Link href="/">
           <a>
             <Image
-
               src="/navLogo.png"
               alt="/"
               width="80"
@@ -169,7 +168,7 @@ function Navbar() {
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                 <a
-                  href="https://www.linkedin.com/in/clint-briley-50056920a/"
+                  href="https://www.linkedin.com/in/ian-john-samson-60942a238/"
                   target="_blank"
                   rel="noreferrer"
                 >
