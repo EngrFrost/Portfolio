@@ -177,7 +177,7 @@ function Navbar() {
                   </div>
                 </a>
                 <a
-                  href="https://github.com/fireclint"
+                  href="https://github.com/EngrFrost"
                   target="_blank"
                   rel="noreferrer"
                 >
