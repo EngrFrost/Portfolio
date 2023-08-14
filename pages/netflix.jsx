@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import netflixImg from "../public/assets/projects/netflix.jpg";
+import netflixImg from "../public/assets/projects/hydroil2.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 
@@ -17,8 +17,8 @@ const netflix = () => {
           alt="/"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-          <h2 className="py-2">Netflix App</h2>
-          <h3>React JS / Tailwind / Firebase</h3>
+          <h2 className="py-2">Hydroil Solutions</h2>
+          <h3>HTML/CSS</h3>
         </div>
       </div>
 
@@ -27,27 +27,30 @@ const netflix = () => {
           <p>Project</p>
           <h2>Overview</h2>
           <p>
-            I built this application in React JS and is hosted on GitHub pages.
-            This app features user authentication with firebase as well as the
-            firestore cloud storage database. This application is pulling movie
-            data from an the IMDB movie API and displaying different categories.
-            It features horizontal sliding and a featured selection. The
-            useContext hook is also being implemented for app-wide state
-            management.
+            I designed and developed this website utilizing HTML and CSS, while
+            the backend was implemented using the Umbraco CMS. The website
+            serves as a clear and concise platform, effectively showcasing the
+            company profile, services, and capabilities. It offers visitors the
+            opportunity to engage with the company through the website by means
+            of contact forms. Additionally, the site features a dedicated
+            section highlighting current job openings. Through this project, I
+            skillfully demonstrated my ability to create an informative and
+            user-friendly website, seamlessly integrating front-end design with
+            Umbraco CMS for efficient content management and user interaction.
           </p>
           <a
-            href="https://github.com/fireclint/netflix-react-tailwind"
+            href="https://github.com/EngrFrost/Hydroil-Home"
             target="_blank"
             rel="noreferrer"
           >
             <button className="px-8 py-2 mt-4 mr-8">Code</button>
           </a>
           <a
-            href="https://fireclint.github.io/netflix-react-tailwind/"
+            href="http://www.hydroil-solutions.com/"
             target="_blank"
             rel="noreferrer"
           >
-            <button className="px-8 py-2 mt-4">Demo</button>
+            <button className="px-8 py-2 mt-4">Page Link</button>
           </a>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4">
@@ -55,19 +58,16 @@ const netflix = () => {
             <p className="text-center font-bold pb-2">Technologies</p>
             <div className="grid grid-cols-3 md:grid-cols-1">
               <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" /> React
+                <RiRadioButtonFill className="pr-1" /> HTML
               </p>
               <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" /> Tailwind
+                <RiRadioButtonFill className="pr-1" /> CSS
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" /> Javascript
               </p>
               <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" /> Firebase
-              </p>
-              <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" /> IMDB API
+                <RiRadioButtonFill className="pr-1" /> UMBRACO
               </p>
             </div>
           </div>

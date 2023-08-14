@@ -16,15 +16,13 @@ const About = () => {
             / / I am not your average developer
           </p> */}
           <p className="py-2 text-gray-600">
-            Graduate with a love for computer engineering discussing technical
-            subjects like creating a system. a committed, enthusiastic, and
-            ready individual must diligently strive toward the success of the
-            team. Working with computers and technology has always come
-            naturally to me. My employment began in 2022. After mastering HTML
-            and CSS, I moved on to javascript and became even more excited about
-            creating interactive websites. I then began working for others. My
-            time is currently being spent learning new technologies, developing
-            apps with React JS, and NextJS.
+            Hello, Im IAN!, a dedicated software developer with three years of
+            experience. My journey has been a fusion of innovation and
+            collaboration, crafting intuitive interfaces, integrating robust
+            back-end systems, and driving impactful projects. I thrive in
+            dynamic teams, embrace constant learning, and channel my creativity
+            both in and out of coding. Lets connect and create exceptional
+            software solutions together.
           </p>
           <Link href="/#projects">
             <p className="py-2 text-gray-600 underline cursor-pointer">

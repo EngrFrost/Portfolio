@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import propertyImg from "../public/assets/projects/traverse2.png";
+import twitchImg from "../public/assets/projects/pnp.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 
-const property = () => {
+const pnp = () => {
   return (
     <div className="w-full">
       <div className="w-screen h-[50vh] relative">
@@ -13,12 +13,12 @@ const property = () => {
           className="absolute z-1"
           layout="fill"
           objectFit="cover"
-          src={propertyImg}
+          src={twitchImg}
           alt="/"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-          <h2 className="py-2">Traverse PH</h2>
-          <h3>React JS / Tailwind / Firebase</h3>
+          <h2 className="py-2">PNP eDPCR</h2>
+          <h3>REACTJS</h3>
         </div>
       </div>
 
@@ -27,32 +27,31 @@ const property = () => {
           <p>Project</p>
           <h2>Overview</h2>
           <p>
-            I developed this application utilizing React JS for the front end
-            and Laravel for the back end from my previous work.The app enables
-            users to conveniently search for hotels in the Philippines based on
-            their preferred location. Users can explore hotel names, check-in
-            times, and check-out times, and even filter results based on their
-            desired area. The app also provides a comprehensive list of
-            recommended hotels in the selected area, along with real-time
-            availability information for the specified dates. This project
-            showcases my proficiency in creating a user-friendly interface for
-            hotel search and booking, seamlessly integrating React JS and
-            Laravel.
+            I played a key role as the front-end developer in a collaborative
+            team that constructed this application using ReactJS for the front
+            end and Laravel for the backend. The project central objective
+            revolves around generating and managing reports, catering to a
+            hierarchical structure spanning from lowest ranking personnel to
+            administrators and super administrators. <br />
+            <br />A noteworthy feature of the application is the ability to sort
+            and filter files and diverse records across an array of report
+            categories. While specific functionalities cannot be divulged, the
+            project overarching purpose centers on streamlining and enhancing
+            the reporting process. My contribution to this initiative showcases
+            my adeptness in front-end development, contributing to a robust and
+            dynamic system that effectively facilitates report management and
+            user interaction.
           </p>
-
-          <a href="https://traverse.ph/" target="_blank" rel="noreferrer">
-            <button className="px-8 py-2 mt-4">PAGE LINK</button>
-          </a>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4">
           <div className="p-2">
             <p className="text-center font-bold pb-2">Technologies</p>
             <div className="grid grid-cols-3 md:grid-cols-1">
               <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" /> React
+                <RiRadioButtonFill className="pr-1" /> REACT JS
               </p>
               <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" /> Boostrap5
+                <RiRadioButtonFill className="pr-1" /> ANT Design
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" /> Javascript
@@ -71,4 +70,4 @@ const property = () => {
   );
 };
 
-export default property;
+export default pnp;
