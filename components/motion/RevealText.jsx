@@ -15,10 +15,18 @@ export default function RevealText({
   stagger = STAGGER / 3,
 }) {
   const ref = useRef(null);
-  const words = String(children).split(" ");
+  const isString = typeof children === "string";
+
+  if (!isString && process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.warn(
+      "RevealText expects a plain string child for per-word animation; received non-string children, rendering without word reveal."
+    );
+  }
 
   useGSAP(
     () => {
+      if (!isString) return;
       const targets = ref.current.querySelectorAll("[data-word]");
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         gsap.set(targets, { yPercent: 0, opacity: 1 });
@@ -36,6 +44,15 @@ export default function RevealText({
     { scope: ref }
   );
 
+  if (!isString) {
+    return (
+      <Tag ref={ref} className={className}>
+        {children}
+      </Tag>
+    );
+  }
+
+  const words = children.split(" ");
   return (
     <Tag ref={ref} className={className}>
       {words.map((w, i) => (

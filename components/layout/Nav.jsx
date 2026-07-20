@@ -25,6 +25,13 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed top-0 z-[100] w-full transition-colors duration-300 ${

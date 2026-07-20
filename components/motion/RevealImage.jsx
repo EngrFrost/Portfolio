@@ -9,25 +9,28 @@ import { GSAP_EASE } from "@/lib/motion.config";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-export default function RevealImage({ src, alt, className = "", priority = false }) {
+export default function RevealImage({
+  src,
+  alt,
+  className = "",
+  priority = false,
+  fill = false,
+  sizes,
+}) {
   const ref = useRef(null);
 
   useGSAP(
     () => {
-      const img = ref.current.querySelector("img");
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.from(ref.current, {
+      const img = ref.current.querySelector("img");
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: ref.current, start: "top 85%" },
+      });
+      tl.from(ref.current, {
         clipPath: "inset(100% 0% 0% 0%)",
         duration: 1.1,
         ease: GSAP_EASE,
-        scrollTrigger: { trigger: ref.current, start: "top 85%" },
-      });
-      gsap.from(img, {
-        scale: 1.25,
-        duration: 1.1,
-        ease: GSAP_EASE,
-        scrollTrigger: { trigger: ref.current, start: "top 85%" },
-      });
+      }).from(img, { scale: 1.25, duration: 1.1, ease: GSAP_EASE }, 0);
     },
     { scope: ref }
   );
@@ -35,10 +38,17 @@ export default function RevealImage({ src, alt, className = "", priority = false
   return (
     <div
       ref={ref}
-      className={`overflow-hidden rounded-2xl ${className}`}
+      className={`relative overflow-hidden rounded-2xl ${className}`}
       style={{ clipPath: "inset(0% 0% 0% 0%)" }}
     >
-      <Image src={src} alt={alt} priority={priority} className="h-full w-full object-cover" />
+      <Image
+        src={src}
+        alt={alt}
+        priority={priority}
+        fill={fill}
+        sizes={sizes}
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
