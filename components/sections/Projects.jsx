@@ -20,15 +20,18 @@ export default function Projects() {
       if (reduce || !isDesktop) return; // vertical scroll fallback
 
       const track = trackRef.current;
-      const distance = track.scrollWidth - window.innerWidth;
+      // Function-based values so they recompute on ScrollTrigger.refresh()
+      // (e.g. window resize) via invalidateOnRefresh — a captured constant
+      // would leave the rail under/over-shooting the last card after a resize.
+      const getDistance = () => track.scrollWidth - window.innerWidth;
 
       gsap.to(track, {
-        x: -distance,
+        x: () => -getDistance(),
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: () => `+=${distance}`,
+          end: () => `+=${getDistance()}`,
           scrub: 1,
           pin: true,
           invalidateOnRefresh: true,
