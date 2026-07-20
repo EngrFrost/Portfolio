@@ -16,9 +16,9 @@ const display = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Ian John Samson — Front-End Developer",
+  title: "Ian John Samson — Full-Stack Developer",
   description:
-    "Front-end developer building responsive, motion-rich web experiences.",
+    "Full-stack developer building responsive, motion-rich web experiences.",
   icons: { icon: "/favicon.ico" },
 };
 

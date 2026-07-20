@@ -9,7 +9,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import MagneticButton from "@/components/motion/MagneticButton";
 import { EASE } from "@/lib/motion.config";
 
-const ROLES = ["Front-End Developer", "UI Engineer", "React Specialist"];
+const ROLES = ["Full-Stack Developer", "UI Engineer", "React Specialist"];
 const NAME = "IAN";
 
 const socials = [
