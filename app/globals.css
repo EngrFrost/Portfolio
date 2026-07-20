@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: auto; }
+  body {
+    @apply bg-bg text-text font-body tracking-wide antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { @apply font-display font-bold leading-[0.95]; }
+  ::selection { background: #7C5CFF; color: #08080B; }
+}
+
+@layer components {
+  .section-label {
+    @apply font-body text-sm uppercase tracking-[0.3em] text-accent;
+  }
+  .section-number {
+    @apply font-body text-sm uppercase tracking-[0.3em] text-text-muted;
+  }
+}
+
+/* --- Custom cursor --- */
+[data-cursor="custom"],
+[data-cursor="custom"] * { cursor: none !important; }
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  margin: -14px 0 0 -14px;
+  border: 1.5px solid #7C5CFF;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: difference;
+}
+
+/* --- RevealText masking --- */
+.reveal-word { display: inline-block; overflow: hidden; vertical-align: top; }
+.reveal-word > [data-word] { display: inline-block; will-change: transform; }
+
+/* --- Loader --- */
+.loader {
+  position: fixed; inset: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  background: #08080B;
+}
+
+/* --- Reduced motion: neutralize transforms --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cursor-ring { display: none !important; }
+}
