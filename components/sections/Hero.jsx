@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import MagneticButton from "@/components/motion/MagneticButton";
 import { EASE } from "@/lib/motion.config";
+
+const HeroBlob = dynamic(() => import("@/components/three/HeroBlob"), { ssr: false });
 
 const ROLES = ["Full-Stack Developer", "UI Engineer", "React Specialist"];
 const NAME = "IAN";
@@ -21,11 +24,19 @@ const socials = [
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
+  const [show3D, setShow3D] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(() => setRoleIndex((i) => (i + 1) % ROLES.length), 2600);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const fine = window.matchMedia("(pointer: fine)").matches;
+    const wide = window.matchMedia("(min-width: 768px)").matches;
+    setShow3D(!reduce && fine && wide);
   }, []);
 
   return (
@@ -34,7 +45,15 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/3 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/20 blur-[140px]"
       />
-      <div className="mx-auto w-full max-w-content px-4 md:px-8">
+      {show3D && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-1/2 md:block"
+        >
+          <HeroBlob />
+        </div>
+      )}
+      <div className="relative z-10 mx-auto w-full max-w-content px-4 md:px-8">
         <motion.p
           className="section-label"
           initial={{ opacity: 0, y: 10 }}
