@@ -6,7 +6,10 @@
   html { scroll-behavior: auto; }
   body {
     @apply bg-bg text-text font-body tracking-wide antialiased;
-    overflow-x: hidden;
+    /* `clip` (not `hidden`) prevents horizontal overflow WITHOUT turning the
+       body into a scroll container — `hidden` would force overflow-y to `auto`,
+       which breaks Lenis's scroll-height measurement and freezes the page. */
+    overflow-x: clip;
   }
   h1, h2, h3, h4 { @apply font-display font-bold leading-[0.95]; }
   ::selection { background: #7C5CFF; color: #08080B; }
