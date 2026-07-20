@@ -4,6 +4,7 @@ import SmoothScrollProvider from "@/components/motion/SmoothScrollProvider";
 import CustomCursor from "@/components/motion/CustomCursor";
 import Loader from "@/components/motion/Loader";
 import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
 
 const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const display = Space_Grotesk({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <CustomCursor />
         <Nav />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <Footer />
       </body>
     </html>
   );
