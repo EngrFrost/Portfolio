@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }) {
   return (
     <main className="w-full">
       <div className="relative h-[60vh] w-full">
-        <Image src={project.cover} alt={project.title} fill className="object-cover" priority />
+        <Image src={project.cover} alt={project.title} fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-bg/20" />
         <div className="absolute bottom-0 left-0 w-full">
           <div className="mx-auto max-w-content px-4 pb-10 md:px-8">
