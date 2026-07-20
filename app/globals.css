@@ -10,6 +10,11 @@
   }
   h1, h2, h3, h4 { @apply font-display font-bold leading-[0.95]; }
   ::selection { background: #7C5CFF; color: #08080B; }
+  :focus-visible {
+    outline: 2px solid #7C5CFF;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }
 
 @layer components {

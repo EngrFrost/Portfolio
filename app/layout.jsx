@@ -3,6 +3,7 @@ import "./globals.css";
 import SmoothScrollProvider from "@/components/motion/SmoothScrollProvider";
 import CustomCursor from "@/components/motion/CustomCursor";
 import Loader from "@/components/motion/Loader";
+import MotionProvider from "@/components/motion/MotionProvider";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
@@ -25,11 +26,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${body.variable} ${display.variable}`}>
       <body>
-        <Loader />
-        <CustomCursor />
-        <Nav />
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
-        <Footer />
+        <a
+          href="#home"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-bg"
+        >
+          Skip to content
+        </a>
+        <MotionProvider>
+          <Loader />
+          <CustomCursor />
+          <Nav />
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );
