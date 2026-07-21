@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RiRadioButtonFill } from "react-icons/ri";
+import ProjectCoverImage from "@/components/projects/ProjectCoverImage";
 import { PROJECTS, getProject } from "@/lib/projects";
 
 export function generateStaticParams() {
@@ -22,16 +22,12 @@ export default async function ProjectPage({ params }) {
 
   return (
     <main className="w-full">
-      <div className="relative h-[60vh] w-full">
-        <Image src={project.cover} alt={project.title} fill sizes="100vw" className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-bg/20" />
-        <div className="absolute bottom-0 left-0 w-full">
-          <div className="mx-auto max-w-content px-4 pb-10 md:px-8">
-            <h1 className="font-display text-5xl md:text-7xl">{project.title}</h1>
-            <p className="mt-2 text-text-muted">{project.subtitle}</p>
-          </div>
-        </div>
-      </div>
+      <ProjectCoverImage
+        src={project.cover}
+        alt={project.title}
+        title={project.title}
+        subtitle={project.subtitle}
+      />
 
       <div className="mx-auto grid max-w-content gap-12 px-4 py-16 md:grid-cols-5 md:px-8">
         <div className="md:col-span-3">
