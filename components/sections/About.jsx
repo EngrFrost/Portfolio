@@ -13,12 +13,13 @@ export default function About() {
             Who I Am
           </RevealText>
           <RevealText className="mt-8 max-w-2xl text-lg text-text-muted">
-            Hello, I&apos;m Ian — a dedicated software developer with three years of
-            experience. My journey has been a fusion of innovation and collaboration:
-            crafting intuitive interfaces, integrating robust back-end systems, and driving
-            impactful projects. I thrive in dynamic teams, embrace constant learning, and
-            channel my creativity both in and out of coding. Let&apos;s connect and create
-            exceptional software solutions together.
+            Seeking a challenging role as a Full Stack Developer where I can leverage my
+            extensive JavaScript expertise and diverse technical skills. I aim to contribute
+            to innovative projects that push the boundaries of web and mobile development,
+            while continuously expanding my skill set. My goal is to deliver high-quality,
+            fostering collaborative relationships within cross-functional teams. I&apos;m excited
+            to tackle new challenges and make a significant impact in a dynamic development
+            environment.
           </RevealText>
           <Link
             href="/#projects"

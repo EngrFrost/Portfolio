@@ -56,8 +56,10 @@ export default function RevealText({
   return (
     <Tag ref={ref} className={className}>
       {words.map((w, i) => (
-        <span key={i} className="reveal-word">
-          <span data-word>{w}</span>
+        <span key={i}>
+          <span className="reveal-word">
+            <span data-word>{w}</span>
+          </span>
           {i < words.length - 1 ? " " : ""}
         </span>
       ))}
